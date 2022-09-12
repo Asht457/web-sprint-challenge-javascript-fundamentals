@@ -17,7 +17,7 @@ function myFunction() {
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+//The nested function is able to reach upwards in the parental chain in order to pull information, so if it doesn't find what it's looking for inside itself it'll search myFunction next, and then it'll search the global scope. This is known as closure.
 
 
 
@@ -30,10 +30,14 @@ function myFunction() {
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+  let q = 0;
+  for(let i = 0; i <= num; i++) {
+   q = q + i;
   }
+  return q;
+  }
+  console.log(summation(4))
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -60,8 +64,10 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(arr){
+    const displayNames = [];
+    arr.forEach((element, index) => displayNames.push(`name: ${arr[index].animal_name}, scientific: ${arr[index].scientific_name}`));
+    return displayNames;
   }
   
 
@@ -75,8 +81,9 @@ const zooAnimals = [
   💡 NOTE: Do some research for other methods that can help help you
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(arr){
+    const newArr = arr.map((element, index) => arr[index].animal_name.toLowerCase())
+    return newArr;
   }
   
   
@@ -88,8 +95,9 @@ const zooAnimals = [
   3. Return this new array
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(arr){
+    const filteredArr = arr.filter((element, index) => arr[index].population < 5);
+    return filteredArr;
   }
   
 
@@ -102,8 +110,9 @@ const zooAnimals = [
   💡 NOTE: Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count. Check MDN/W3Schools for syntax!
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(arr){
+    const sum = arr.reduce((pre, cur) => pre + cur.population, 0)
+    return sum;
   }
   
   
@@ -116,8 +125,8 @@ const zooAnimals = [
     💡 NOTE: The tests for 'consume' will pass if it is created correctly and also after you correctly complete the functions 'add' and 'greeting' below in Step 2.
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
+  function consume(a, b, c){
+    return c(a, b);
   }
  
   
@@ -128,8 +137,8 @@ const zooAnimals = [
  2. Return the sum of those numbers
  */
 
-function add(/*Your Code Here */){
-    /*Your Code Here*/
+function add(num1, num2){
+    return num1 + num2;
   }
 
 
